@@ -10,6 +10,6 @@ public class cobaAja {
 
     @GetMapping("/hai")
     public String hello(){
-        return "hello";
+        return "hellohai";
     }
 }
