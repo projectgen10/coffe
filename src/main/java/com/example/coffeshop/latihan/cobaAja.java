@@ -12,4 +12,9 @@ public class cobaAja {
     public String hello(){
         return "helloje";
     }
+
+    @GetMapping("/kenapa")
+    public String kenapa(){
+        return "gatau";
+    }
 }
