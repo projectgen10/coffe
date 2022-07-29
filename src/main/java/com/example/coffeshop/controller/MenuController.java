@@ -179,9 +179,10 @@ public class MenuController {
         dto.setHarga(entity.getHarga());
         return dto;
     }
-
-    // coba menggunakan intellij ultimate donk
-    // cari tau apa yang berubah
-    // abaikan aja
-    // wkwkwkwkwk
+    public JenisDto convertEntitytoDto(Jenis entity) {
+        JenisDto dto = new JenisDto();
+        dto.setIdJenis(entity.getIdJenis());
+        dto.setNamaJenis(entity.getNamaJenis());
+        return dto;
+    }
 }
