@@ -23,8 +23,4 @@ public class Jenis {
     public void setNamaJenis(String namaJenis) {
         this.namaJenis = namaJenis;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "idMenu")
-    private Menu menu;
 }

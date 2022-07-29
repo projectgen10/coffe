@@ -25,15 +25,24 @@ public class ServiceMenuImp implements ServiceMenu {
         return menuRepository.save(menu1);
     }
 
-    public Menu update(MultipartFile file, Menu menu, String idMenu) throws IOException {
-        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-        Menu menu1 =  new Menu(fileName, file.getContentType(), file.getBytes());
-        Menu menu2 = menuRepository.findByidMenu(idMenu).get();
-        System.out.println(menu2.toString());
+    //    public Menu update(MultipartFile file, Menu menu, String idMenu) throws IOException {
+//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+//        Menu menu1 =  new Menu(fileName, file.getContentType(), file.getBytes());
+//        Menu menu2 = menuRepository.findByidMenu(idMenu).get();
+//        System.out.println(menu2.toString());
+//        menu1.setNamaMenu(menu.getNamaMenu());
+//        menu1.setHarga(menu.getHarga());
+//        menu1.setStock(menu.getStock());
+//        return menuRepository.save(menu1);
+//    }
+    @Override
+    public void updateMenu(String idMenu, Menu menu) {
+        Menu menu1 = menuRepository.findByidMenu(idMenu).get();
+        System.out.println(menu1.toString());
         menu1.setNamaMenu(menu.getNamaMenu());
-        menu1.setHarga(menu.getHarga());
         menu1.setStock(menu.getStock());
-        return menuRepository.save(menu1);
+        menu1.setHarga(menu.getHarga());
+        menuRepository.save(menu1);
     }
 
     public Menu getFile(String idMenu) {
@@ -50,15 +59,7 @@ public class ServiceMenuImp implements ServiceMenu {
     }
 
     @Override
-    public void updateMenu(String idMenu, Menu menu) {
-        Menu menu1 = menuRepository.findByidMenu(idMenu).get();
-        System.out.println(menu1.toString());
-        menu1.setNamaMenu(menu.getNamaMenu());
-        menu1.setStock(menu.getStock());
-        menu1.setHarga(menu.getHarga());
-        menuRepository.save(menu1);
+    public void deleteMenu(String idMenu) {
+        menuRepository.deleteById(idMenu);
     }
-
-    @Override
-    public void deleteMenu(String idMenu) { menuRepository.deleteById(idMenu); }
 }

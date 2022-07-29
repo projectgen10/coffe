@@ -8,17 +8,15 @@ public class MenuDto {
     private Double harga;
 
     private String name;
-    private String url;
     private String type;
     private long size;
 
-    public MenuDto(String namaMenu, String namaJenis, Integer stock, Double harga, String name, String url, String type, long size) {
+    public MenuDto(String namaMenu, String namaJenis, Integer stock, Double harga, String name, String type, long size) {
         this.namaMenu = namaMenu;
         this.namaJenis = namaJenis;
         this.stock = stock;
         this.harga = harga;
         this.name = name;
-        this.url = url;
         this.type = type;
         this.size = size;
     }
@@ -32,14 +30,6 @@ public class MenuDto {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 
     public String getType() {

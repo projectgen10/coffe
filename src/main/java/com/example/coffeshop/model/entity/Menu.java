@@ -96,7 +96,11 @@ public class Menu {
         this.harga = harga;
     }
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "idJenis", insertable = false, updatable = false)
-    private List<Jenis> jenis;
+    private Jenis jenis;
+
+    public Jenis getJenis() { return jenis; }
+
+    public void setJenis(Jenis jenis) { this.jenis = jenis; }
 }
